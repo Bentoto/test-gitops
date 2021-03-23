@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitops
+  namespace: gitops
+  labels:
+    app: gitops
+spec:
+  selector:
+    matchLabels:
+      app: gitops
+  template:
+    metadata:
+      labels:
+        app: gitops
+    spec:
+      containers:
+      - name: gitops
+        image: mbentor/gitops:test1.0.1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
