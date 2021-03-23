@@ -4,6 +4,7 @@
 name: Python app
 
 on:
+  workflow_dispatch:
   pull_request:
     paths:
     - 'python/*'
@@ -29,6 +30,6 @@ jobs:
     - name: push docker image
       run: |
         cd ./python
-        docker login --username={{ sercrets.DOCKER_USER }} --password={{ secret.DOCKER_PASSWD }}
-        docker image build -t {{ secrets.DOCKER_USER }}/gitops:test1.0 .
-        docker push {{ secret.DOCKER_USER }}/gitops:test1.0
+        echo "${{ secrets.DOCKER_PASSWD }}" | docker login -u "${{ secrets.DOCKER_USER }}" --password-stdin
+        docker image build -t ${{ secrets.DOCKER_USER }}/gitops:test1.0.1 .
+        docker push ${{ secrets.DOCKER_USER }}/gitops:test1.0.1
