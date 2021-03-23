@@ -29,6 +29,6 @@ jobs:
     - name: push docker image
       run: |
         cd ./python
-        echo "${{ secrets.DOCKER_PASSWD }}" | docker login -u "{{ secrets.DOCKER_USER }}" --password-stdin
-        docker image build -t {{ secrets.DOCKER_USER }}/gitops:test1.0 .
-        docker push {{ secret.DOCKER_USER }}/gitops:test1.0
+        echo "${{ secrets.DOCKER_PASSWD }}" | docker login -u "${{ secrets.DOCKER_USER }}" --password-stdin
+        docker image build -t ${{ secrets.DOCKER_USER }}/gitops:test1.0 .
+        docker push ${{ secrets.DOCKER_USER }}/gitops:test1.0
