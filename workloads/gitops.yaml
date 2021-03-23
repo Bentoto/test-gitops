@@ -1,23 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gitops
-  namespace: gitops
+  name: hello
+  namespace: lasample
   labels:
-    app: gitops
+    app: hello
 spec:
   selector:
     matchLabels:
-      app: gitops
+      app: hello
   template:
     metadata:
       labels:
-        app: gitops
+        app: hello
     spec:
       containers:
-      - name: gitops
-        image: mbentor/gitops:test1.0.1
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
+      - name: hello
+        image: linuxacademycontent/gitops:hellov1.0
