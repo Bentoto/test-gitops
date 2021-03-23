@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: gitops
-        image: linuxacademycontent/gitops:hellov1.0
+        image: hello-world
         resources:
           limits:
             memory: "128Mi"
