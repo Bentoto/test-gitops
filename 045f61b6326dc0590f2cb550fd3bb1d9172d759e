@@ -1,0 +1,1 @@
+{"jobID":"cc295fc5-0888-6597-0af7-35d3ec47f9ce","spec":{"type":"policy","cause":{"Message":"","User":""},"spec":{"bentonamespace:deployment/gitops":{"add":{"automated":"true"},"remove":{}}}},"result":null}
